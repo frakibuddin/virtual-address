@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var owl = $("#owl-demo");
+  let owl = $("#owl-demo");
 
   owl.owlCarousel({
     items: 3,
@@ -9,7 +9,7 @@ $(document).ready(function () {
     itemsMobile: false,
   });
 
-  var owl_gallery = $("#owl-gallery");
+  let owl_gallery = $("#owl-gallery");
 
   owl_gallery.owlCarousel({
     items: 3,
@@ -25,7 +25,7 @@ $(document).ready(function () {
     owl_gallery.trigger("owl.prev");
   });
 
-  var owl_gallery_single = $("#owl-gallery-single");
+  let owl_gallery_single = $("#owl-gallery-single");
 
   owl_gallery_single.owlCarousel({
     items: 1,
@@ -43,14 +43,13 @@ $(document).ready(function () {
   });
 
   // owl-demo-single-sm
-  var owl_single_sm = $("#owl-demo-single-sm");
-
+  let owl_single_sm = $("#owl-demo-single-sm");
   owl_single_sm.owlCarousel({
     items: 1,
   });
 });
 
-// nav hover function dropdown-menu
+// nav hover function ovaright dropdown-menu
 let dropDownLink = document.querySelectorAll("#dropDown-link");
 let dropdownMenu = document.querySelectorAll(".dropdown-menu");
 
@@ -63,12 +62,12 @@ dropDownLink.forEach((element) => {
   });
 });
 
-//omload popup show
-// $(window).on("load", function () {
-//   setTimeout(() => {
-//     $(".modal").modal("show");
-//   }, 3000);
-// });
+//onload popup show
+$(window).on("load", function () {
+  setTimeout(() => {
+    $(".modal").modal("show");
+  }, 3000);
+});
 
 // onscroll animation
 const scrollElements = document.querySelectorAll(".js-scroll");
@@ -110,12 +109,12 @@ const handleScrollAnimation = () => {
 
 window.addEventListener("scroll", () => {
   handleScrollAnimation();
+  showTapToTop();
 });
 
 //tap to top btn
 const tap_top_btn = document.querySelector(".tap-toTop");
-
-window.onscroll = function () {
+function showTapToTop() {
   let posHight = document.documentElement.scrollHeight;
   let pos = window.scrollY;
 
@@ -124,22 +123,22 @@ window.onscroll = function () {
   } else {
     tap_top_btn.classList.remove("active");
   }
-};
+}
 
 tap_top_btn.onclick = function () {
   document.documentElement.scrollTop = 0;
 };
 
-//
-let ab = document.querySelector(".floating-select");
-ab.onchange = () => {
-  if (ab.value == "kochi") {
+// home header select box
+let select_box = document.querySelector(".floating-select");
+select_box.onchange = () => {
+  if (select_box.value == "kochi") {
     window.location.href = "/virtual-office-in-kochi.html";
-  } else if (ab.value == "delhi") {
+  } else if (select_box.value == "delhi") {
     window.location.href = "/virtual-office-in-kochi.html";
-  } else if (ab.value == "bangalore") {
+  } else if (select_box.value == "bangalore") {
     window.location.href = "/virtual-office-in-kochi.html";
-  } else if (ab.value == "chennai") {
+  } else if (select_box.value == "chennai") {
     window.location.href = "/virtual-office-in-kochi.html";
   }
 };
